@@ -1,0 +1,16 @@
+import Sections from "./components/sections/Sections";
+import { useEditorStore } from "~/routes/Editor/stores";
+
+export default function GUI() {
+  const selectedObjId = useEditorStore((state) => state.selectedObjId);
+  const mode = useEditorStore((state) => state.mode);
+  return (
+    <section className="h-full w-1/3 min-w-96 overflow-auto bg-neutral-900 p-4">
+      {selectedObjId && mode === "edit" && <Sections />}
+      {!selectedObjId && mode === "edit" && (
+        <p className="text-white">Select an object</p>
+      )}
+      {mode === "play" && <p className="text-white">Play mode</p>}
+    </section>
+  );
+}
