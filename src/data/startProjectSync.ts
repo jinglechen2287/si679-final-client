@@ -109,11 +109,7 @@ export function startProjectSync(projectId: string) {
   const handleStoreChange = () => {
     const next = pickDBFields();
     const nextString = stringify(next);
-    if (isApplyingRemoteUpdate) {
-      // Keep snapshot aligned but skip posting
-      lastSnapshotString = nextString;
-      return;
-    }
+    if (isApplyingRemoteUpdate) return;
     if (nextString === lastSnapshotString) return;
     debouncedPostUpdate();
   };
