@@ -104,7 +104,7 @@ export function startProjectSync(projectId: string) {
     lastSnapshotString = currentString;
   };
 
-  const debouncedPostUpdate = debounce(postUpdate, 10, { maxWait: 50 });
+  const debouncedPostUpdate = debounce(postUpdate, 50, { maxWait: 250 });
 
   const handleStoreChange = () => {
     const next = pickDBFields();
