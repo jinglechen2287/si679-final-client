@@ -3,8 +3,8 @@ import type { User } from "~/types/Users";
 import { getJWT } from "./auth";
 
 export const API_URL = import.meta.env.VITE_API_URL;
-export const PROJECTS_ENDPOINT = `${API_URL}/projects`;
-export const USERS_ENDPOINT = `${API_URL}/users`;
+export const PROJECTS_ENDPOINT = `${API_URL}/api/projects`;
+export const USERS_ENDPOINT = `${API_URL}/api/users`;
 
 const buildUrlWithQuery = (
   url: string,
